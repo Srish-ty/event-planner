@@ -12,4 +12,8 @@ public class HelloController {
     public String sayHello() {
         return "Hello from Spring Boot!";
     }
+    @GetMapping("next")
+    public String index() {
+        return "Hello to /api/next endpoint";
+    }
 }
