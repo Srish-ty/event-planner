@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.concurrent.atomic.AtomicLong;
+import java.time.LocalDateTime;
 
 @Service
 public class EventService {
@@ -22,6 +23,9 @@ public class EventService {
     }
 
     public Event createEvent(Event event) {
+        if (event.getDateTime() == null) {
+            event.setDateTime(LocalDateTime.now());
+        }
         event.setId(counter.getAndIncrement());
         events.add(event);
         return event;
