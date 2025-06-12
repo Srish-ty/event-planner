@@ -1,9 +1,12 @@
 package org.example.demo0.model;
 
 import java.time.LocalDateTime;
+import javax.validation.constraints.NotBlank;
 
 public class Event {
     private Long id;
+
+    @NotBlank(message = "Title is required")
     private String title;
     private String description;
     private String location;

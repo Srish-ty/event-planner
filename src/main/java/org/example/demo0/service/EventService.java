@@ -33,10 +33,18 @@ public class EventService {
 
     public Optional<Event> updateEvent(Long id, Event updatedEvent) {
         return getEventById(id).map(existing -> {
-            existing.setTitle(updatedEvent.getTitle());
-            existing.setDescription(updatedEvent.getDescription());
-            existing.setLocation(updatedEvent.getLocation());
-            existing.setDateTime(updatedEvent.getDateTime());
+            if (updatedEvent.getTitle() != null) {
+                existing.setTitle(updatedEvent.getTitle());
+            }
+            if (updatedEvent.getDescription() != null) {
+                existing.setDescription(updatedEvent.getDescription());
+            }
+            if (updatedEvent.getLocation() != null) {
+                existing.setLocation(updatedEvent.getLocation());
+            }
+            if (updatedEvent.getDateTime() != null) {
+                existing.setDateTime(updatedEvent.getDateTime());
+            }
             return existing;
         });
     }
