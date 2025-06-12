@@ -1,7 +1,7 @@
 package org.example.demo0.model;
 
 import java.time.LocalDateTime;
-import javax.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotBlank;
 
 public class Event {
     private Long id;
