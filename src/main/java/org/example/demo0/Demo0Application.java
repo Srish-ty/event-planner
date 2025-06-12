@@ -13,7 +13,7 @@ public class Demo0Application {
     public static void main(String[] args) {
         SpringApplication.run(Demo0Application.class, args);
     }
-    @GetMapping("/")
+    @RequestMapping("/")
     public String index() {
         return "The / page";
     }
